@@ -9,7 +9,7 @@ module.exports = {
     }
 
     // My add function
-    function add(){
+    add(){
         sum = 0;
 
         for (var i = 0; i < arguments.length; i++) {
@@ -20,7 +20,7 @@ module.exports = {
     }
 
     // My multiply function
-    function multiply(){
+    multiply(){
         product = 1;
 
         for (var i = 0; i < arguments.length; i++) {
