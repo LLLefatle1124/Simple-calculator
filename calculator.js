@@ -1,25 +1,32 @@
 module.exports = {
-    add, multiply
+    myCalculator
 }
 
-// My add function
-function add(){
-    sum = 0;
-
-    for (var i = 0; i < arguments.length; i++) {
-        sum += arguments[i];
+ class myCalculator{
+    // my Constructor
+    constructor(){
+        
     }
 
-    return sum;
-}
+    // My add function
+    function add(){
+        sum = 0;
 
-// My multiply function
-function multiply(){
-    product = 1;
+        for (var i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+        }
 
-    for (var i = 0; i < arguments.length; i++) {
-        product *= arguments[i];
+        return sum;
     }
 
-    return product;
+    // My multiply function
+    function multiply(){
+        product = 1;
+
+        for (var i = 0; i < arguments.length; i++) {
+            product *= arguments[i];
+        }
+
+        return product;
+    }
 }

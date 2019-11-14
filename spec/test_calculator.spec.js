@@ -30,4 +30,3 @@ describe("function returning a product of numbers.", function(){
         expect(calculator.multiply(1, 2, 3, 4)).toBe(24)
     })
 })
-
