@@ -33,3 +33,4 @@ describe("function returning a product of numbers.", function(){
         expect(hiPart2.multiply(1, 2, 3, 4)).toBe(24)
     })
 })
+
