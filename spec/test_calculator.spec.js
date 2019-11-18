@@ -1,26 +1,26 @@
-let calculator = require("../calculator")
-let part2 = new calculator.myCalc();
+// let part2 = require("../calculator")
+const Part2 = require('../calculator') ;
+let hiPart2 = new Part2.myPart2()
 
 beforeEach(function() {
     part2.sum = 0;
 });
 
 describe("add_numbers.", function(){
-    
     it("should add two nubers and return the sum.", function(){
-    expect(part2.add(0,0)).toBe(0)
+        expect(hiPart2.add(0,0)).toBe(0)
     })
-
+    
     it("should add two negative numbers and return the sum.", function(){
-        expect(part2.add(-1, -1)).toBe(-2)
+        expect(hiPart2.add(-1, -1)).toBe(-2)
     })
-
+    
     it("should add two negative numbers and return the sum.", function() {
-        expect(part2.add(4, 5)).toBe(9)
+        expect(hiPart2.add(4, 5)).toBe(9)
     })
 
     it("adds any count of numbers and returns the sum.", function(){
-        expect(part2.add(1, 2, 3, 4)).toBe(10)
+        expect(hiPart2.add(1, 2, 3, 4)).toBe(10)
     })
 
     // it("allows last() as a parameter and do addition using it", function(){
@@ -32,17 +32,17 @@ describe("function multiply.", function(){
 
     // 
     beforeEach(function(){
-        part2.product = 1;
+        hiPart2.product = 1;
     })
 
     // test for returning a product of just two numbers
     it("returns product of two umbers.", function(){
-        expect(part2.multiply(1, 2)).toBe(2)
+        expect(hiPart2.multiply(1, 2)).toBe(2)
     })
 
     // test for returning a product of any numbers
     it("returns product of n umbers.", function () {
-        expect(part2.multiply(1, 2, 3, 4)).toBe(24)
+        expect(hiPart2.multiply(1, 2, 3, 4)).toBe(24)
     })
 
     // test for usage of the last result in other calculations
