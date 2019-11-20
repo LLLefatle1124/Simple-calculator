@@ -1,19 +1,27 @@
-// let part2 = require("../calculator")
+// Imports
 const Part2 = require('../calculator') ;
+
+// object creation
 let hiPart2 = new Part2.calculator()
 
 describe("add_numbers ", function(){
 
     it("should add two nubers and return the sum.", function(){
+    
         expect(hiPart2.add(0,0)).toBe(0)
+    
     })
     
     it("should add two negative numbers and return the sum.", function(){
+    
         expect(hiPart2.add(-1, -1)).toBe(-2)
+    
     })
     
     it("should add two negative numbers and return the sum.", function() {
+    
         expect(hiPart2.add(4, 5)).toBe(9)
+    
     })
 
     it("adds any count of numbers and returns the sum.", function(){
@@ -22,7 +30,6 @@ describe("add_numbers ", function(){
     
     })
 
-    
     it("allows last() as a parameter and do addition using it", function(){
         
         hiPart2.add(1,2)
@@ -36,12 +43,16 @@ describe("function multiply.", function(){
 
     // test for returning a product of just two numbers
     it("returns product of two umbers.", function(){
+
         expect(hiPart2.multiply(1, 2)).toBe(2)
+    
     })
 
     // test for returning a product of any numbers
     it("returns product of n umbers.", function () {
+    
         expect(hiPart2.multiply(1, 2, 3, 4)).toBe(24)
+    
     })
 
     // test for usage of the last result in other calculations
@@ -54,14 +65,15 @@ describe("function multiply.", function(){
     })
 
     it("allows a slot array instance as a variable and add to another number" , function(){
-        expect(hiPart2.slots[1], 5).toBe(8)    
+    
+        expect(hiPart2.add(hiPart2.slots[1], 5)).toBe(8)    
+    
     })
 
 })
 
 describe("function last.", function(){
     
-
     it("returns the preveous result for add",function(){
 
         hiPart2.add(1, 2)
@@ -69,25 +81,31 @@ describe("function last.", function(){
         expect(hiPart2.last()).toBe(3)
     
     })
-
     
-    it("returns the preveous result for add",function(){
+    it("returns the preveous result for multiply",function(){
         
-        hiPart2.add(100,200)
+        hiPart2.multiply(100,20)
         
-        expect(hiPart2.last()).toBe(300)
+        expect(hiPart2.last()).toBe(2000)
     
     })
 
 })
 
 
-// what should set slot do without just having to accept one variable
 describe("function set_slot.", function(){
 
     it("takes one argument called slot member and ", function(){
+        
+        hiPart2.add(1,2)
+        hiPart2.set_slot(1)
 
-        expect().toBe()
+        expect(hiPart2.slots[1]).toBe(3)
+
+        hiPart2.add(10, 20)
+        hiPart2.set_slot[2]
+
+        expect(hiPart2.slots[2]).toBe(30)
 
     })
 
@@ -101,26 +119,29 @@ describe("function get_slot.", function(){
     hiPart2.set_slot(1)
 
     it("accepts one variable and returns the resut of lust/prev-calculation", function(){
+   
         expect(hiPart2.get_slot(1)).toBe(3)
+   
     })
 
     hiPart2.add(10,20)
     hiPart2.set_slot(2)
     
     it("accepts one variable and returns the resut of lust/prev-calculation", function(){
+   
         expect(hiPart2.get_slot(2)).toBe(30)
+   
     })
 
     it("does not affect last", function(){
-        expect(hiPart2.add(100, 200)).toBe(300)
-    })
-        
-    it("accepts one variable and returns the resut of lust/prev-calculation", function(){
+   
+        hiPart2.add(100, 200)
+   
         expect(hiPart2.get_slot(1)).toBe(3)   
         expect(hiPart2.get_slot(2)).toBe(30)
-    })
 
-    it("does not affect last", function(){
-        expect(hiPart2.add(100, 200)).toBe(300)
+        expect(hiPart2.last()).toBe(300)
+   
     })
+    
 })
