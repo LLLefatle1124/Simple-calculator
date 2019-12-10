@@ -15,7 +15,14 @@
         this.sum = 0;
 
         for (var i = 0; i < arguments.length; i++) {
-            this.sum += arguments[i]
+            var k = arguments[i]
+            if(arguments[i] == 'LAST'){
+                this.sum += this.last() 
+            }else if(arguments[i] == ('SLOT_' + (k.charAt(k.length-1)).toString())){
+                this.sum += this.get_slot(k.charAt(k.length-1))
+            }else{
+                this.sum += arguments[i]
+            }
         }
         
         this.myLast = this.sum
@@ -28,8 +35,12 @@
 
         this.product = 1
 
-        for (var i = 0; i < arguments.length; i++) {
-            this.product *= arguments[i]
+        for (var i = 0; i < arguments.length; i++){
+            if(arguments[i] == 'LAST'){
+                this.product *= this.last()
+            }else{
+                this.product *= arguments[i]
+            }   
         }
     
         this.myLast = this.product
@@ -38,7 +49,7 @@
     }
 
     last(){
-    
+
         return this.myLast
    
     }
@@ -55,6 +66,7 @@
         return this.slots[_mySlot]
     
     }
+
 }
 
 module.exports = {

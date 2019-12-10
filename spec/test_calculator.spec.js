@@ -27,7 +27,7 @@ describe("add_numbers ", function(){
         
         hiPart2.add(1,2)
         
-        expect(hiPart2.add(hiPart2.last(), 5)).toBe(8)
+        expect(hiPart2.add('LAST', 5)).toBe(8)
     
     })
 })
@@ -49,12 +49,8 @@ describe("function multiply.", function(){
         
         hiPart2.multiply(1, 2, 3, 4)
 
-        expect(hiPart2.multiply(hiPart2.last(), 5)).toBe(120)
+        expect(hiPart2.multiply('LAST', 5)).toBe(120)
     
-    })
-
-    it("allows a slot array instance as a variable and add to another number" , function(){
-        expect(hiPart2.slots[1], 5).toBe(8)    
     })
 
 })
@@ -71,9 +67,9 @@ describe("function last.", function(){
     })
 
     
-    it("returns the preveous result for add",function(){
+    it("returns the preveous result for multiply",function(){
         
-        hiPart2.add(100,200)
+        hiPart2.multiply(1,200)
         
         expect(hiPart2.last()).toBe(300)
     
@@ -89,6 +85,12 @@ describe("function set_slot.", function(){
 
         expect().toBe()
 
+    })
+
+    it("allows a slot array instance as a variable and add to another number" , function(){
+
+        expect(hiPart2.add('SLOT_1', 5)).toBe(8)    
+    
     })
 
 })
