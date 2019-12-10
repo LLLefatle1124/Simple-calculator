@@ -15,10 +15,10 @@
         this.sum = 0;
 
         for (var i = 0; i < arguments.length; i++) {
-            var k = arguments[i]
+            let k = arguments[i].toString
             if(arguments[i] == 'LAST'){
                 this.sum += this.last() 
-            }else if(arguments[i] == ('SLOT_' + (k.charAt(k.length-1)).toString())){
+            }else if(arguments[i] == ('SLOT_' + (k.charAt(k.length-1)))){
                 this.sum += this.get_slot(k.charAt(k.length-1))
             }else{
                 this.sum += arguments[i]

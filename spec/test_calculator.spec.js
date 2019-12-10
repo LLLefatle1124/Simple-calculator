@@ -36,11 +36,7 @@ describe("add_numbers ", function(){
         
         part2_object.add(1,2)
         
-<<<<<<< HEAD
         expect(hiPart2.add('LAST', 5)).toBe(8)
-=======
-        expect(part2_object.add(part2_object.last(), 5)).toBe(8)
->>>>>>> 102fbcf72015f45bc2d153cfb3a99e2999d4a501
     
     })
 })
@@ -66,23 +62,10 @@ describe("function multiply.", function(){
         
         part2_object.multiply(1, 2, 3, 4)
 
-<<<<<<< HEAD
         expect(hiPart2.multiply('LAST', 5)).toBe(120)
     
     })
 
-=======
-        expect(part2_object.multiply(part2_object.last(), 5)).toBe(120)
-    
-    })
-
-    it("allows a slot array instance as a variable and add to another number" , function(){
-    
-        expect(part2_object.add(part2_object.slots[1], 5)).toBe(8)    
-    
-    })
-
->>>>>>> 102fbcf72015f45bc2d153cfb3a99e2999d4a501
 })
 
 describe("function last.", function(){
@@ -97,11 +80,7 @@ describe("function last.", function(){
     
     it("returns the preveous result for multiply",function(){
         
-<<<<<<< HEAD
         hiPart2.multiply(1,200)
-=======
-        part2_object.multiply(100,20)
->>>>>>> 102fbcf72015f45bc2d153cfb3a99e2999d4a501
         
         expect(part2_object.last()).toBe(2000)
     
