@@ -13,18 +13,30 @@
     add(){
 
         this.sum = 0;
+        let k
+        let slotNumber
 
         for (var i = 0; i < arguments.length; i++) {
-            let k = arguments[i].toString
+            
+            k = arguments[i]
+            slotNumber = k.toString().charAt(k.length-1)
+
+            // if last is passed as an argument
             if(arguments[i] == 'LAST'){
                 this.sum += this.last() 
-            }else if(arguments[i] == ('SLOT_' + (k.charAt(k.length-1)))){
-                this.sum += this.get_slot(k.charAt(k.length-1))
-            }else{
+            }
+            // if a slot is passed as an argument
+            else if(arguments[i] == ('SLOT_' + slotNumber.toString())){
+                // this.set_slot(slotNumber)
+                this.sum += this.get_slot(slotNumber)
+            }
+            // if just a number is passed
+            else{
                 this.sum += arguments[i]
             }
+            
         }
-        
+
         this.myLast = this.sum
         return this.sum
     
@@ -34,15 +46,29 @@
     multiply(){
 
         this.product = 1
-
+        let k
+        let slotNumber
+        
         for (var i = 0; i < arguments.length; i++){
+
+            k = arguments[i]
+            slotNumber = k.toString().charAt(k.length-1)
+
+            // if last is passed as an argument
             if(arguments[i] == 'LAST'){
                 this.product *= this.last()
-            }else{
+            }
+            // if a slot is passed as an argument
+            else if(arguments[i] == ('SLOT_' + slotNumber.toString())){
+                // this.set_slot(slotNumber)
+                this.product *= this.get_slot(slotNumber)
+            }
+            // if just a number is passed as an argument
+            else{
                 this.product *= arguments[i]
-            }   
+            } 
         }
-    
+        
         this.myLast = this.product
         return this.product
     
@@ -69,6 +95,9 @@
 
 }
 
+let myCal = new calculator()
+myCal.add(1, 2)
+myCal.multiply('LAST', 5)
 module.exports = {
     calculator
 }
